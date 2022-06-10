@@ -71,7 +71,7 @@ export default function Example() {
 										<Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
 											<span className="sr-only">Open user menu</span>
 											<img
-												className="h-8 w-8 rounded-full"
+												className="h-12 w-12 rounded-full"
 												src="/me.jpg"
 												alt=""
 											/>

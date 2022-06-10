@@ -1,10 +1,28 @@
 import Head from "next/head";
 import Typed from "react-typed";
 import Navbar from "/components/Navbar.js";
-
+import { useState } from 'react';
+import { postData } from '../utils/fetchData';
 const roles = ["Bcrypt Hash Generator and Verifier"];
 
 export default function Home() {
+
+	const initialState = { salt: '', text: '', hash: '' };
+  const [hashData, setHashData] = useState({});
+
+  const { salt, text, hash} = hashData;
+
+	const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setHashData({ ...hashData, [name]: value });
+  };
+	const handleSubmit = async (e) =>{
+		e.preventDefault();
+		console.log(hashData)
+		const res = await postData('aes', hashData);
+		console.log(res)
+		setHashData({ ...hashData, hash: res.hash})
+	}
 	return (
 		<div>
 			<Head>
@@ -39,19 +57,23 @@ export default function Home() {
 					<div className="grid grid-cols-10 gap-3 p-2 ">
 						<div className="col-span-3 place-self-center ">
 							<button
+							onClick={handleSubmit}
 								type="submit"
-								className="py-2 w-full sm:px-12 px-1 sm:px-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-slate-600 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+								className="py-2 w-full sm:px-12 px-1 sm:px-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-slate-600 hover:bg-slate-700 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-gray-900"
 							>
 								<span>Generat&nbsp;Hash</span>
 							</button>
 							<div>
 								<input
 									className="py-2 mt-4 flex justify-center w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-									id="username"
+									id="salt"
 									type="number"
                   min="2"
                   max="15"
 									placeholder="2-to-15"
+									name="salt"
+									value={salt}
+									onChange={handleChangeInput}
 								></input>
 								<label
 									className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -64,10 +86,13 @@ export default function Home() {
 							{" "}
 							<textarea
 								className="shadow  block w-full appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-								id="username"
+								id="text"
 								type="text"
-								placeholder="Username"
+								placeholder="text"
                 rows="4"
+								name="text"
+								value={text}
+								onChange={handleChangeInput}
 							></textarea>
 						</div>
 						<div className="col-span-3 mx-auto place-self-center text-sm sm:text-xl">
@@ -76,11 +101,16 @@ export default function Home() {
 						<div className="col-span-7">
 							{" "}
 							<textarea
-								className="justify-center block w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-								id="username"
+								className=" justify-center block w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								id="hash"
+							
 								type="textarea"
-								placeholder="Username"
+								placeholder="Hashs result "
 								rows="4"
+								name="hash"
+								value={hash}
+								onChange={handleChangeInput}
+								readOnly
 							></textarea>
 						</div>
 					
