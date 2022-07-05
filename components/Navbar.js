@@ -10,7 +10,7 @@ const navigation = [
 	{ name: "Sha256", href: "sha256", current: true },
 
 	{ name: "Git-Link/index", href: "https://github.com/ripanionut/Proiect-Sec-Cyb/blob/main/pages/index.js", current: false },
-	{ name: "Git-Link/server", href: "https://github.com/ripanionut/Proiect-Sec-Cyb/blob/main/pages/index.js", current: false },
+	{ name: "Git-Link/server", href: "https://github.com/ripanionut/Proiect-Sec-Cyb/blob/main/pages/api/aes.js", current: false },
 
 ];
 
