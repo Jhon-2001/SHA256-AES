@@ -15,14 +15,9 @@ export default async (req, res) => {
 
 const hash = async (req, res) => {
 	const { salt, text } = req.body;
-if (salt< 19){
-  const hash = await bcrypt.hash(text, Number(salt)) 
+
+  const hash = await crypto.createHmac('sha256', text).update("json").digest("base64"); 
   res.json({hash:hash})
-}
-else 
-
-res.json({hash:"Salting must be between 1 and 18."})
-
 
     
 }

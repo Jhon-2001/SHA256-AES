@@ -1,2 +1,3 @@
 https://melvingeorge.me/blog/create-sha256-hash-nodejs
 https://md5calc.com/hash/sha256
+https://appdevtools.com/bcrypt-generator

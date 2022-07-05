@@ -5,10 +5,10 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
-	{ name: "Algoritms", href: "#", current: true },
-	{ name: "Most Used", href: "#", current: false },
-	{ name: "Strongest", href: "#", current: false },
-	{ name: "#Hash Database ", href: "#", current: false },
+	// { name: "Algoritms", href: "#", current: false },
+	{ name: "Blowfish", href: "/", current: true },
+	{ name: "Sha256", href: "sha256", current: false },
+	{ name: "Git-Link ", href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -71,7 +71,7 @@ export default function Example() {
 										<Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
 											<span className="sr-only">Open user menu</span>
 											<img
-												className="h-12 w-12 rounded-full"
+												className="h-12 w- rounded-full"
 												src="/me.jpg"
 												alt=""
 											/>

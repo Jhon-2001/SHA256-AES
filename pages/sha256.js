@@ -18,7 +18,7 @@ export default function Home() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		console.log(hashData);
-		const res = await postData("aes", hashData);
+		const res = await postData("sha256", hashData);
 		console.log(res);
 		setHashData({ ...hashData, hash: res.hash });
 	};
@@ -63,20 +63,7 @@ export default function Home() {
 								<span>Generat&nbsp;Hash</span>
 							</button>
 							<div>
-								<input
-									className="py-2  mt-4 flex justify-center w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-									id="salt"
-									type="number"
-									min="1"
-									max="18"
-									placeholder="2-to-18"
-									name="salt"
-									value={salt}
-									onChange={handleChangeInput}
-								></input>
-								<label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-									Rounds of Salting
-								</label>
+							
 							</div>
 						</div>
 						<div className="col-span-7 ">
@@ -113,60 +100,8 @@ export default function Home() {
 				</form>
 			</div>
 
-			<div className="flex justify-start py-4 px-4 ">
-				<ul className="bg-slate-100 w-full rounded-lg border border-gray-200 mx-[-2px] ">
-					<li className="font-medium	px-6 py-1 border-b border-gray-200 w-full ">
-						Rounds of salting
-					</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">&lt; 8</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">8 to 10</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">
-						11 to 13
-					</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">
-						14 to 15
-					</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">16</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">17</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">18</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">
-						25
-					</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">
-						31
-					</li>
-				</ul>
-				<ul className="bg-slate-100  w-full rounded-lg border border-gray-200 ">
-					<li className="font-medium	px-6 py-1 border-b border-gray-200 w-full">
-						Time to process
-					</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">Instant</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">
-						~ 10 hashes / sec
-					</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">
-						~ 2 hashes / sec
-					</li>
-					<li className="px-6 py-1 border-b border-gray-200 w-full">
-						~ 1 sec / hash
-					</li>{" "}
-					<li className="px-6 py-1 border-b border-gray-200 w-full">
-						~ 3 sec / hash
-					</li>{" "}
-					<li className="px-6 py-1 border-b border-gray-200 w-full">
-						~ 10 sec / hash
-					</li>{" "}
-					<li className="px-6 py-1 border-b border-gray-200 w-full">
-						~ 30 sec / hash
-					</li>{" "}
-
-					<li className="px-6 py-1 border-b border-gray-200 w-full">
-						~ 1 hour / hash
-					</li>{" "}	<li className="px-6 py-1 border-b border-gray-200 w-full">
-						~ 3 days / hash
-					</li>{" "}
-				</ul>
-			</div>
+		<p className="text-xl m-5 pt-5 font-normal leading-normal mt-0 mb-2 text-gray-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA-256 stands for Secure Hash Algorithm 256-bit and it's used for cryptographic security. Cryptographic hash algorithms produce irreversible and unique hashes. The larger the number of possible hashes, the smaller the chance that two values will create the same hash.</p>
+		<p className="text-xl m-5 font-normal leading-normal mt-0 mb-2 text-gray-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA-256 stands for Secure Hash Algorithm 256-bit and it's used for cryptographic security. Cryptographic hash algorithms produce irreversible and unique hashes. The larger the number of possible hashes, the smaller the chance that two values will create the same hash.</p>
 		</div>
 	);
 }
