@@ -7,8 +7,11 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 const navigation = [
 	// { name: "Algoritms", href: "#", current: false },
 	{ name: "Blowfish", href: "/", current: true },
-	{ name: "Sha256", href: "sha256", current: false },
-	{ name: "Git-Link ", href: "#", current: false },
+	{ name: "Sha256", href: "sha256", current: true },
+
+	{ name: "Git-Link/index", href: "https://github.com/ripanionut/Proiect-Sec-Cyb/blob/main/pages/index.js", current: false },
+	{ name: "Git-Link/server", href: "https://github.com/ripanionut/Proiect-Sec-Cyb/blob/main/pages/index.js", current: false },
+
 ];
 
 function classNames(...classes) {
