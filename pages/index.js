@@ -167,8 +167,8 @@ export default function Home() {
 					</li>{" "}
 				</ul>
 			</div>
-			<p className="text-xl m-5 pt-5 font-normal leading-normal mt-0 mb-2 text-gray-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blowfish is a variable-length, symmetric, 64-bit block cipher. Designed by Bruce Schneier in 1993 as a "general-purpose algorithm," it was intended to provide a fast, free, drop-in alternative to the aging Data Encryption Standard (DES) and International Data Encryption Algorithm (IDEA) encryption algorithms.</p>
-		<p className="text-xl m-5 font-normal leading-normal mt-0 mb-2 text-gray-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How strong is Blowfish?
+			<p className="text-xl m-5 pt-5 font-normal leading-normal mt-0 mb-2 text-gray-800"><span className="pl-8"></span>Blowfish is a variable-length, symmetric, 64-bit block cipher. Designed by Bruce Schneier in 1993 as a general-purpose algorithm, it was intended to provide a fast, free, drop-in alternative to the aging Data Encryption Standard (DES) and International Data Encryption Algorithm (IDEA) encryption algorithms.</p>
+		<p className="text-xl m-5 font-normal leading-normal mt-0 mb-2 text-gray-800"><span className="pl-8"></span>How strong is Blowfish?
 Blowfish at 64 bits can be faster than AES (128) particularly when the AES implementation is not maximized to AES-256. However, AES-256 — the strongest encryption standard — is infeasible to brute force with current computing resources.</p>
 		
 		</div>

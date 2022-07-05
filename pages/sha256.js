@@ -101,10 +101,10 @@ export default function Home() {
 			</div>
 
 		
-    <p className="text-xl m-5 pt-5 font-normal leading-normal mt-0 mb-2 text-gray-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA-256 stands for Secure Hash Algorithm 256-bit and it s used for cryptographic security. Cryptographic hash algorithms produce irreversible and unique hashes. The larger the number of possible hashes, the smaller the chance that two values will create the same hash.</p>
-    <p className="text-2xl m-5 font-normal leading-normal mt-0 mb-2 text-pink-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Intresting Fact !!</p>
+    <p className="text-xl m-5 pt-5 font-normal leading-normal mt-0 mb-2 text-gray-800"><span className="pl-8"></span>SHA-256 stands for Secure Hash Algorithm 256-bit and it s used for cryptographic security. Cryptographic hash algorithms produce irreversible and unique hashes. The larger the number of possible hashes, the smaller the chance that two values will create the same hash.</p>
+    <p className="text-2xl m-5 font-normal leading-normal mt-0 mb-2 text-pink-800"><span className="pl-8"></span>Intresting Fact !!</p>
 
-    <p className="text-xl m-5 font-normal leading-normal mt-0 mb-2 text-gray-800">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bitcoin uses double SHA-256, meaning that it applies the hash functions twice. The algorithm is a variant of the SHA-2 (Secure Hash Algorithm 2), developed by the National Security Agency (NSA).</p>
+    <p className="text-xl m-5 font-normal leading-normal mt-0 mb-2 text-gray-800"><span className="pl-8"></span>Bitcoin uses double SHA-256, meaning that it applies the hash functions twice. The algorithm is a variant of the SHA-2 (Secure Hash Algorithm 2), developed by the National Security Agency (NSA).</p>
 		</div>
 	);
 }
