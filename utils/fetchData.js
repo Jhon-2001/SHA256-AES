@@ -1,4 +1,4 @@
-const baseUrl = 'sha-256-39zzkn14f-jhon-2001.vercel.app'
+const baseUrl = 'https://sha-256-aes.vercel.app/'
 
 export const getData = async (url, token) => {
   const res = await fetch(`${baseUrl}/api/${url}`, {
