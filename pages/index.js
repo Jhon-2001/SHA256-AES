@@ -6,10 +6,10 @@ import { postData } from "../utils/fetchData";
 const roles = ["Bcrypt Hash Generator of Blowfish"];
 
 export default function Home() {
-	const initialState = { salt: "", text: "", hash: "" };
+	const initialState = { salt: "", text: "", hash: "",date: "" };
 	const [hashData, setHashData] = useState({});
-
-	const { salt, text, hash } = hashData;
+  // const [time, setTime] = useState({})
+	const { salt, text, hash, date } = hashData;
 
 	const handleChangeInput = (e) => {
 		const { name, value } = e.target;
@@ -20,7 +20,8 @@ export default function Home() {
 		console.log(hashData);
 		const res = await postData("aes", hashData);
 		console.log(res);
-		setHashData({ ...hashData, hash: res.hash });
+		setHashData({ ...hashData, hash: res.hash , date:res.date });
+		// setTime({...time, date:res.date})
 	};
 	return (
 		<div>
@@ -92,10 +93,15 @@ export default function Home() {
 								onChange={handleChangeInput}
 							></textarea>
 						</div>
-						<div className="col-span-3 mx-auto place-self-center text-sm sm:text-xl">
+						<div className="col-span-3 pt-10 mx-auto place-self-center text-sm sm:text-xl">
 							Hashed text --{">"}
+							<div className="pt-14">Encryption time --{">"}</div>
 						</div>
+					
+						
+						
 						<div className="col-span-7">
+							
 							{" "}
 							<textarea
 								className="text-xl justify-center block w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -108,6 +114,18 @@ export default function Home() {
 								onChange={handleChangeInput}
 								readOnly
 							></textarea>
+							
+							<input
+								className="text-xl mt-2 justify-center block w-1/4 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								id="hash"
+								type="textarea"
+								placeholder="Encrypt time"
+								name="hash"
+								value={date+ " ms"}
+								onChange={handleChangeInput}
+								readOnly
+							></input>
+							
 						</div>
 					</div>
 				</form>

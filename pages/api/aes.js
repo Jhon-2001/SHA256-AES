@@ -15,9 +15,11 @@ export default async (req, res) => {
 
 const hash = async (req, res) => {
 	const { salt, text } = req.body;
+	const d = new Date();
 if (salt< 19){
   const hash = await bcrypt.hash(text, Number(salt)) 
-  res.json({hash:hash})
+	const date = new Date() -d
+  res.json({hash:hash, date:date})
 }
 else 
 
